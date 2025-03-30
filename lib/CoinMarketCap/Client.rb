@@ -1,8 +1,8 @@
 # CoinMarketCap/Client.rb
 # CoinMarketCap::Client
 
-# 20250303
-# 0.1.0
+# 20250303, 04
+# 0.1.1
 
 gem 'http.rb'
 require 'http.rb'
@@ -71,5 +71,5 @@ module CoinMarketCap
     end
   end
 
-  class Client < CoinMarketCap::V1::Client
+  class Client < CoinMarketCap::V1::Client; end
 end

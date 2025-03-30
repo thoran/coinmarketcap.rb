@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'http.rb'
-gem 'minitest'
+
+group :development, :test do
+  gem 'minitest'
+end
