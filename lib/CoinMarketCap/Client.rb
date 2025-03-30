@@ -55,10 +55,6 @@ module CoinMarketCap
       v2_client.ohlcv_latest
     end
 
-    def most_visited
-      v1_client.trending_most_visited
-    end
-
     def latest_price_performance_stats
       v2_client.price_performance_stats_latest
     end
@@ -69,6 +65,10 @@ module CoinMarketCap
       else
         v1_client.listings_latest
       end
+    end
+
+    def most_visited
+      v1_client.trending_most_visited
     end
 
     def trending

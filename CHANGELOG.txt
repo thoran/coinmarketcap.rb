@@ -1,4 +1,9 @@
 202503030
+0.4.1: Finish reordering CoinMarketCap::Client methods alphabetically; + test/test_all.rb to run all tests.
+1. ~ CoinMarketCap::Client: Finish reordering of methods alphabetically.
+2. + test/test_all.rb
+
+202503030
 0.4.0: Gemified, some interface tweaks, and a README.
 1. + CoinMarketCap::VERSION
 2. + coinmarketcap.gemspec
