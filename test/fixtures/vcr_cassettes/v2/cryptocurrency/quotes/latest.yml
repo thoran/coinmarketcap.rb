@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest?id=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      X-Cmc-Pro-Api-Key:
+      - api_key0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 05 Mar 2025 09:22:27 GMT
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Server:
+      - Tengine
+      Vary:
+      - Accept-Encoding
+      - origin,accept-encoding
+      Cache-Control:
+      - no-cache
+      X-Traefik-Route:
+      - coinmarketcap-pro-apis
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 efb4ddf9650598b987ef5db782c5b530.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA60-P3
+      X-Amz-Cf-Id:
+      - FWrbjP8Dlmy-cdCp5uhexsKUX1BUgAoiVoth0r2pPD6hFnoKEEcvig==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":{"timestamp":"2025-03-05T09:22:27.890Z","error_code":0,"error_message":null,"elapsed":43,"credit_count":1,"notice":null},"data":{"1":{"id":1,"name":"Bitcoin","symbol":"BTC","slug":"bitcoin","num_market_pairs":11969,"date_added":"2010-07-13T00:00:00.000Z","tags":[{"slug":"mineable","name":"Mineable","category":"OTHERS"},{"slug":"pow","name":"PoW","category":"ALGORITHM"},{"slug":"sha-256","name":"SHA-256","category":"ALGORITHM"},{"slug":"store-of-value","name":"Store
+        Of Value","category":"CATEGORY"},{"slug":"state-channel","name":"State Channel","category":"CATEGORY"},{"slug":"coinbase-ventures-portfolio","name":"Coinbase
+        Ventures Portfolio","category":"CATEGORY"},{"slug":"three-arrows-capital-portfolio","name":"Three
+        Arrows Capital Portfolio","category":"CATEGORY"},{"slug":"polychain-capital-portfolio","name":"Polychain
+        Capital Portfolio","category":"CATEGORY"},{"slug":"binance-labs-portfolio","name":"Binance
+        Labs Portfolio","category":"CATEGORY"},{"slug":"blockchain-capital-portfolio","name":"Blockchain
+        Capital Portfolio","category":"CATEGORY"},{"slug":"boostvc-portfolio","name":"BoostVC
+        Portfolio","category":"CATEGORY"},{"slug":"cms-holdings-portfolio","name":"CMS
+        Holdings Portfolio","category":"CATEGORY"},{"slug":"dcg-portfolio","name":"DCG
+        Portfolio","category":"CATEGORY"},{"slug":"dragonfly-capital-portfolio","name":"DragonFly
+        Capital Portfolio","category":"CATEGORY"},{"slug":"electric-capital-portfolio","name":"Electric
+        Capital Portfolio","category":"CATEGORY"},{"slug":"fabric-ventures-portfolio","name":"Fabric
+        Ventures Portfolio","category":"CATEGORY"},{"slug":"framework-ventures-portfolio","name":"Framework
+        Ventures Portfolio","category":"CATEGORY"},{"slug":"galaxy-digital-portfolio","name":"Galaxy
+        Digital Portfolio","category":"CATEGORY"},{"slug":"huobi-capital-portfolio","name":"Huobi
+        Capital Portfolio","category":"CATEGORY"},{"slug":"alameda-research-portfolio","name":"Alameda
+        Research Portfolio","category":"CATEGORY"},{"slug":"a16z-portfolio","name":"a16z
+        Portfolio","category":"CATEGORY"},{"slug":"1confirmation-portfolio","name":"1Confirmation
+        Portfolio","category":"CATEGORY"},{"slug":"winklevoss-capital-portfolio","name":"Winklevoss
+        Capital Portfolio","category":"CATEGORY"},{"slug":"usv-portfolio","name":"USV
+        Portfolio","category":"CATEGORY"},{"slug":"placeholder-ventures-portfolio","name":"Placeholder
+        Ventures Portfolio","category":"CATEGORY"},{"slug":"pantera-capital-portfolio","name":"Pantera
+        Capital Portfolio","category":"CATEGORY"},{"slug":"multicoin-capital-portfolio","name":"Multicoin
+        Capital Portfolio","category":"CATEGORY"},{"slug":"paradigm-portfolio","name":"Paradigm
+        Portfolio","category":"CATEGORY"},{"slug":"bitcoin-ecosystem","name":"Bitcoin
+        Ecosystem","category":"PLATFORM"},{"slug":"ftx-bankruptcy-estate","name":"FTX
+        Bankruptcy Estate ","category":"CATEGORY"},{"slug":"2017-2018-alt-season","name":"2017/18
+        Alt season","category":"CATEGORY"},{"slug":"us-strategic-crypto-reserve","name":"US
+        Strategic Crypto Reserve","category":"CATEGORY"}],"max_supply":21000000,"circulating_supply":19832484,"total_supply":19832484,"is_active":1,"infinite_supply":false,"platform":null,"cmc_rank":1,"is_fiat":0,"self_reported_circulating_supply":null,"self_reported_market_cap":null,"tvl_ratio":null,"last_updated":"2025-03-05T09:20:00.000Z","quote":{"USD":{"price":88193.72185691181,"volume_24h":56172501968.92132,"volume_change_24h":-22.918,"percent_change_1h":0.50752474,"percent_change_24h":5.1405162,"percent_change_7d":-0.70644012,"percent_change_30d":-7.67876823,"percent_change_60d":-9.82011909,"percent_change_90d":-14.42590092,"market_cap":1749100577627.6538,"market_cap_dominance":60.074,"fully_diluted_market_cap":1852068158995.15,"tvl":null,"last_updated":"2025-03-05T09:20:00.000Z"}}}}}'
+  recorded_at: Wed, 05 Mar 2025 09:22:27 GMT
+recorded_with: VCR 6.3.1

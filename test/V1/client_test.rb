@@ -1,17 +1,16 @@
-require 'minitest/autorun'
-require 'minitest/spec'
-require 'ostruct'
-
+require_relative '../helper'
 require_relative '../../lib/CoinMarketCap/V1/Client'
 
 describe CoinMarketCap::V1::Client do
-  let(:client) {CoinMarketCap::V1::Client.new(api_key: ARGV[0])}
+  let(:client) {CoinMarketCap::V1::Client.new(api_key: 'api_key0')}
 
   describe "#listings_latest" do
     it "returns an array of latest prices" do
-      response = client.listings_latest
-       _(response['data']).must_be_kind_of(Array)
-       _(response['data'][0]).must_be_kind_of(Hash)
+      VCR.use_cassette('v1/cryptocurrency/listings/latest') do
+        response = client.listings_latest
+         _(response['data']).must_be_kind_of(Array)
+         _(response['data'][0]).must_be_kind_of(Hash)
+      end
     end
   end
 

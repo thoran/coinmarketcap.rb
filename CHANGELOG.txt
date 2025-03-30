@@ -1,4 +1,12 @@
 20250305
+0.2.2: Introduce VCR gem for testing.
+1. + gem 'vcr'
+2. + test/helper.rb
+3. ~ test/V1/client_test.rb: Use VCR.
+4. ~ test/V2/client_test.rb: Use VCR.
+5. ~ test/client_test.rb: Use VCR.
+
+20250305
 0.2.1: Refactor with common methods placed in a module.
 1. + CoinMarketCap::Common
 2. ~ CoinMarketCap::V1::Client: Use CoinMarketCap::Common.

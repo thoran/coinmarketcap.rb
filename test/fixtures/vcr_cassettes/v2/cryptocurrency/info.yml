@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pro-api.coinmarketcap.com/v2/cryptocurrency/info?id=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      X-Cmc-Pro-Api-Key:
+      - api_key0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 05 Mar 2025 09:22:26 GMT
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Server:
+      - Tengine
+      Vary:
+      - Accept-Encoding
+      - origin,accept-encoding
+      Cache-Control:
+      - no-cache
+      X-Traefik-Route:
+      - coinmarketcap-pro-apis
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 79272ab9b399ee696b329d4f677dca48.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA60-P3
+      X-Amz-Cf-Id:
+      - q7aBZNdKXzQEnfINuT1JhQuq1KQo4sg-myvvFXePi-XiL4Kh8xQ6bQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":{"timestamp":"2025-03-05T09:22:26.741Z","error_code":0,"error_message":null,"elapsed":11,"credit_count":1,"notice":null},"data":{"1":{"id":1,"name":"Bitcoin","symbol":"BTC","category":"coin","description":"Bitcoin
+        (BTC) is a cryptocurrency launched in 2010. Users are able to generate BTC
+        through the process of mining. Bitcoin has a current supply of 19,832,484.
+        The last known price of Bitcoin is 88,317.47670528 USD and is up 5.11 over
+        the last 24 hours. It is currently trading on 11969 active market(s) with
+        $57,676,854,652.92 traded over the last 24 hours. More information can be
+        found at https://bitcoin.org/.","slug":"bitcoin","logo":"https://s2.coinmarketcap.com/static/img/coins/64x64/1.png","subreddit":"bitcoin","notice":"","tags":["mineable","pow","sha-256","store-of-value","state-channel","coinbase-ventures-portfolio","three-arrows-capital-portfolio","polychain-capital-portfolio","binance-labs-portfolio","blockchain-capital-portfolio","boostvc-portfolio","cms-holdings-portfolio","dcg-portfolio","dragonfly-capital-portfolio","electric-capital-portfolio","fabric-ventures-portfolio","framework-ventures-portfolio","galaxy-digital-portfolio","huobi-capital-portfolio","alameda-research-portfolio","a16z-portfolio","1confirmation-portfolio","winklevoss-capital-portfolio","usv-portfolio","placeholder-ventures-portfolio","pantera-capital-portfolio","multicoin-capital-portfolio","paradigm-portfolio","bitcoin-ecosystem","ftx-bankruptcy-estate","2017-2018-alt-season","us-strategic-crypto-reserve"],"tag-names":["Mineable","PoW","SHA-256","Store
+        Of Value","State Channel","Coinbase Ventures Portfolio","Three Arrows Capital
+        Portfolio","Polychain Capital Portfolio","Binance Labs Portfolio","Blockchain
+        Capital Portfolio","BoostVC Portfolio","CMS Holdings Portfolio","DCG Portfolio","DragonFly
+        Capital Portfolio","Electric Capital Portfolio","Fabric Ventures Portfolio","Framework
+        Ventures Portfolio","Galaxy Digital Portfolio","Huobi Capital Portfolio","Alameda
+        Research Portfolio","a16z Portfolio","1Confirmation Portfolio","Winklevoss
+        Capital Portfolio","USV Portfolio","Placeholder Ventures Portfolio","Pantera
+        Capital Portfolio","Multicoin Capital Portfolio","Paradigm Portfolio","Bitcoin
+        Ecosystem","FTX Bankruptcy Estate ","2017/18 Alt season","US Strategic Crypto
+        Reserve"],"tag-groups":["OTHERS","ALGORITHM","ALGORITHM","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","CATEGORY","PLATFORM","CATEGORY","CATEGORY","CATEGORY"],"urls":{"website":["https://bitcoin.org/"],"twitter":[],"message_board":["https://bitcointalk.org"],"chat":[],"facebook":[],"explorer":["https://blockchain.info/","https://live.blockcypher.com/btc/","https://blockchair.com/bitcoin","https://explorer.viabtc.com/btc","https://www.okx.com/web3/explorer/btc"],"reddit":["https://reddit.com/r/bitcoin"],"technical_doc":["https://bitcoin.org/bitcoin.pdf"],"source_code":["https://github.com/bitcoin/bitcoin"],"announcement":[]},"platform":null,"date_added":"2010-07-13T00:00:00.000Z","twitter_username":"","is_hidden":0,"date_launched":"2010-07-13T00:00:00.000Z","contract_address":[],"self_reported_circulating_supply":null,"self_reported_tags":null,"self_reported_market_cap":null,"infinite_supply":false}}}'
+  recorded_at: Wed, 05 Mar 2025 09:22:26 GMT
+recorded_with: VCR 6.3.1
