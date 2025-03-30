@@ -56,6 +56,56 @@ describe CoinMarketCap::Client do
     end
   end
 
+  describe "#gainers_and_losers" do
+    it "calls the V1 client trending_gainers_losers method" do
+      mocked_client = Minitest::Mock.new
+      mocked_client.expect :trending_gainers_losers, true, []
+      client.stub :v1_client, mocked_client do
+        client.gainers_and_losers
+      end
+      mocked_client.verify
+    end
+  end
+
+  describe "#historical_price_data" do
+    it "calls the V2 client" do
+      mocked_client = Minitest::Mock.new
+      mocked_client.expect(:ohlcv_historical, {'data' => []}) do |kwargs|
+        kwargs[:id] == 1
+      end
+      client.stub :v2_client, mocked_client do
+        client.historical_price_data(id: 1)
+      end
+      mocked_client.verify
+    end
+  end
+
+  describe "#historical_quotes" do
+    context "when an ID IS provided" do
+      it "calls the V2 client" do
+        mocked_client = Minitest::Mock.new
+        mocked_client.expect(:quotes_historical, {'data' => []}) do |kwargs|
+          kwargs[:id] == 1
+        end
+        client.stub :v2_client, mocked_client do
+          client.historical_quotes(id: 1)
+        end
+        mocked_client.verify
+      end
+    end
+
+    context "when no ID is provided" do
+      it "calls the V1 client" do
+        mocked_client = Minitest::Mock.new
+        mocked_client.expect :listings_historical, {"data" => {}}, []
+        client.stub :v1_client, mocked_client do
+          client.historical_quotes
+        end
+        mocked_client.verify
+      end
+    end
+  end
+
   describe "#info" do
     it "calls the V2 client" do
       mocked_client = Minitest::Mock.new
@@ -80,42 +130,40 @@ describe CoinMarketCap::Client do
     end
   end
 
-  describe "#market_pairs_latest" do
+  describe "#latest_listings" do
     it "calls the V2 client" do
       mocked_client = Minitest::Mock.new
       mocked_client.expect(:market_pairs_latest, true, [])
       client.stub :v2_client, mocked_client do
-        client.market_pairs_latest
+        client.latest_listings
       end
       mocked_client.verify
     end
   end
 
-  describe "#ohlcv_historical" do
-    it "calls the V2 client" do
-      mocked_client = Minitest::Mock.new
-      mocked_client.expect(:ohlcv_historical, {'data' => []}) do |kwargs|
-        kwargs[:id] == 1
-      end
-      client.stub :v2_client, mocked_client do
-        client.ohlcv_historical(id: 1)
-      end
-      mocked_client.verify
-    end
-  end
-
-  describe "#ohlcv_latest" do
+  describe "#latest_price_data" do
     it "calls the V2 client" do
       mocked_client = Minitest::Mock.new
       mocked_client.expect(:ohlcv_latest, true, [])
       client.stub :v2_client, mocked_client do
-        client.ohlcv_latest
+        client.latest_price_data
       end
       mocked_client.verify
     end
   end
 
-  describe "#quotes_latest" do
+  describe "#latest_price_performance_stats" do
+    it "calls the V2 client" do
+      mocked_client = Minitest::Mock.new
+      mocked_client.expect(:price_performance_stats_latest, true, [])
+      client.stub :v2_client, mocked_client do
+        client.latest_price_performance_stats
+      end
+      mocked_client.verify
+    end
+  end
+
+  describe "#latest_quotes" do
     context "when an ID IS provided" do
       it "calls the V2 client" do
         mocked_client = Minitest::Mock.new
@@ -123,7 +171,7 @@ describe CoinMarketCap::Client do
           kwargs[:id] == 1
         end
         client.stub :v2_client, mocked_client do
-          client.quotes_latest(id: 1)
+          client.latest_quotes(id: 1)
         end
         mocked_client.verify
       end
@@ -134,67 +182,30 @@ describe CoinMarketCap::Client do
         mocked_client = Minitest::Mock.new
         mocked_client.expect(:listings_latest, true, [])
         client.stub :v1_client, mocked_client do
-          client.quotes_latest
+          client.latest_quotes
         end
         mocked_client.verify
       end
     end
   end
 
-  describe "#quotes_historical" do
-    context "when an ID IS provided" do
-      it "calls the V2 client" do
-        mocked_client = Minitest::Mock.new
-        mocked_client.expect(:quotes_historical, {'data' => []}) do |kwargs|
-          kwargs[:id] == 1
-        end
-        client.stub :v2_client, mocked_client do
-          client.quotes_historical(id: 1)
-        end
-        mocked_client.verify
-      end
-    end
-
-    context "when no ID is provided" do
-      it "calls the V1 client" do
-        mocked_client = Minitest::Mock.new
-        mocked_client.expect :listings_historical, {"data" => {}}, []
-        client.stub :v1_client, mocked_client do
-          client.quotes_historical
-        end
-        mocked_client.verify
-      end
-    end
-  end
-
-  describe "#trending_gainers_losers" do
-    it "calls the V1 client trending_gainers_losers method" do
-      mocked_client = Minitest::Mock.new
-      mocked_client.expect :trending_gainers_losers, true, []
-      client.stub :v1_client, mocked_client do
-        client.trending_gainers_losers
-      end
-      mocked_client.verify
-    end
-  end
-
-  describe "#trending_latest" do
-    it "calls the V1 client trending_latest method" do
-      mocked_client = Minitest::Mock.new
-      mocked_client.expect :trending_latest, true, []
-      client.stub :v1_client, mocked_client do
-        client.trending_latest
-      end
-      mocked_client.verify
-    end
-  end
-
-  describe "#trending_most_visited" do
+  describe "#most_visited" do
     it "calls the V1 client trending_most_visited method" do
       mocked_client = Minitest::Mock.new
       mocked_client.expect :trending_most_visited, true, []
       client.stub :v1_client, mocked_client do
-        client.trending_most_visited
+        client.most_visited
+      end
+      mocked_client.verify
+    end
+  end
+
+  describe "#trending" do
+    it "calls the V1 client trending_latest method" do
+      mocked_client = Minitest::Mock.new
+      mocked_client.expect :trending_latest, true, []
+      client.stub :v1_client, mocked_client do
+        client.trending
       end
       mocked_client.verify
     end

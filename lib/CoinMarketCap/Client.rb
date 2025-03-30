@@ -1,3 +1,6 @@
+# CoinMarketCap/Client.rb
+# CoinMarketCap::Client
+
 require_relative './V1/Client'
 require_relative './V2/Client'
 
@@ -19,40 +22,16 @@ module CoinMarketCap
       end
     end
 
-    def map
-      v1_client.map
+    def gainers_and_losers
+      v1_client.trending_gainers_losers
     end
 
-    def info(id:)
-      v2_client.info(id: id)
-    end
-
-    def market_pairs_latest
-      v2_client.market_pairs_latest
-    end
-
-    def ohlcv_historical(id:)
+    def historical_price_data(id:)
       v2_client.ohlcv_historical(id: id)
     end
 
-    def ohlcv_latest
-      v2_client.ohlcv_latest
-    end
-
-    def price_performance_stats_latest
-      v2_client.price_performance_stats_latest
-    end
-
-    def quotes_latest(id: nil)
-      if id
-        v2_client.quotes_latest(id: id)
-      else
-        v1_client.listings_latest
-      end
-    end
-    alias_method :quotes, :quotes_latest
-
-    def quotes_historical(id: nil)
+    # I don't see the point of these endpoints at all. (Ha ha!) Either you want current prices or you want historical OHLCV. I don't see why having historical quotes is of any value.
+    def historical_quotes(id: nil)
       if id
         v2_client.quotes_historical(id: id)
       else
@@ -60,16 +39,40 @@ module CoinMarketCap
       end
     end
 
-    def trending_gainers_losers
-      v1_client.trending_gainers_losers
+    def info(id:)
+      v2_client.info(id: id)
     end
 
-    def trending_latest
-      v1_client.trending_latest
+    def map
+      v1_client.map
     end
 
-    def trending_most_visited
+    def latest_listings
+      v2_client.market_pairs_latest
+    end
+
+    def latest_price_data
+      v2_client.ohlcv_latest
+    end
+
+    def most_visited
       v1_client.trending_most_visited
+    end
+
+    def latest_price_performance_stats
+      v2_client.price_performance_stats_latest
+    end
+
+    def latest_quotes(id: nil)
+      if id
+        v2_client.quotes_latest(id: id)
+      else
+        v1_client.listings_latest
+      end
+    end
+
+    def trending
+      v1_client.trending_latest
     end
 
     private

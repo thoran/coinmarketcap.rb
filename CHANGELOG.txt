@@ -1,3 +1,11 @@
+202503030
+0.4.0: Gemified, some interface tweaks, and a README.
+1. + CoinMarketCap::VERSION
+2. + coinmarketcap.gemspec
+3. + README.md
+4. ~ CoinMarketCap::Client: Change interface names to be even more consistent and readable
+5. ~ test/client_test.rb: Accommodate interface name changes.
+
 20250306,7
 0.3.0: Complete V1 and V2 cryptocurrency endpoints. (Still need to add more arguments than id though...)
 1. ~ CoinMarketCap::Client: Add remaining endpoints, but having a single plural endpoint for some.
