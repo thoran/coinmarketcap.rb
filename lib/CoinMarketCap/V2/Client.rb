@@ -32,7 +32,33 @@ module CoinMarketCap
         handle_response(response)
       end
 
+      def market_pairs_latest
+        response = get(path: '/market-pairs/latest')
+        handle_response(response)
+      end
+
+      def ohlcv_historical(id:)
+        response = get(path: '/ohlcv/historical', args: {id: id})
+        handle_response(response)
+      end
+
+      def ohlcv_latest
+        response = get(path: '/ohlcv/latest')
+        handle_response(response)
+      end
+
+      def price_performance_stats_latest
+        response = get(path: '/price-performance-stats/latest')
+        handle_response(response)
+      end
+
+      def quotes_historical(id:)
+        response = get(path: '/quotes/historical', args: {id: id})
+        handle_response(response)
+      end
+
       def quotes_latest(id:)
+        id = [id].compact.join(',')
         response = get(path: '/quotes/latest', args: {id: id})
         handle_response(response)
       end

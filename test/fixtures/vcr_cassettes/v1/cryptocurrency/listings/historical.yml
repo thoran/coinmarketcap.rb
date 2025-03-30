@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/historical
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      X-Cmc-Pro-Api-Key:
+      - api_key0
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 07 Mar 2025 08:24:28 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Server:
+      - Tengine
+      Vary:
+      - Accept-Encoding
+      - origin
+      Cache-Control:
+      - no-cache
+      X-Traefik-Route:
+      - coinmarketcap-pro-apis
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - origin-when-cross-origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 2b08544e695e9e7bc49d159008bcc656.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MXP63-P3
+      X-Amz-Cf-Id:
+      - B9xP6U8DatsYKiWQ6K1yfIt6go4D9q4KRzLvXZs82cuGRpkqhmB57g==
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+            "status": {
+                "timestamp": "2025-03-07T08:24:28.280Z",
+                "error_code": 1006,
+                "error_message": "Your API Key subscription plan doesn't support this endpoint.",
+                "elapsed": 0,
+                "credit_count": 0
+            }
+        }
+  recorded_at: Fri, 07 Mar 2025 08:24:28 GMT
+recorded_with: VCR 6.3.1

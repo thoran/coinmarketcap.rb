@@ -2,6 +2,18 @@
 # CoinMarketCap::Common
 
 module CoinMarketCap
+  class Error < RuntimeError
+    attr_reader :code, :message, :body
+
+    private
+
+    def initialize(code:, message:, body:)
+      @code = code
+      @message = message
+      @body = body
+    end
+  end
+
   module Common
     API_HOST = 'pro-api.coinmarketcap.com'
 
@@ -38,7 +50,11 @@ module CoinMarketCap
       if response.success?
         JSON.parse(response.body)
       else
-        raise "Error: #{response.code} - #{response.message}"
+        raise CoinMarketCap::Error.new(
+          code: response.code,
+          message: response.message,
+          body: response.body,
+        )
       end
     end
   end

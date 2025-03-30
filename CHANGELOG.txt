@@ -1,3 +1,14 @@
+20250306,7
+0.3.0: Complete V1 and V2 cryptocurrency endpoints. (Still need to add more arguments than id though...)
+1. ~ CoinMarketCap::Client: Add remaining endpoints, but having a single plural endpoint for some.
+2. ~ CoinMarketCap::V1::Client: Add remaining endpoints.
+3. ~ CoinMarketCap::V2::Client: Add remaining endpoints.
+4. + gem 'minitest-spec-context'
+5. ~ test/helper.rb: + api_key(), so as to be able to switch between real and mock keys.
+6. ~ test/V1/client_test.rb: Add remaining endpoint tests.
+7. ~ test/V2/client_test.rb: Add remaining endpoint tests.
+8. ~ test/client_test.rb: Add newly covered endpoint tests.
+
 20250305
 0.2.2: Introduce VCR gem for testing.
 1. + gem 'vcr'

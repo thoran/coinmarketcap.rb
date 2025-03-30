@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pro-api.coinmarketcap.com/v1/cryptocurrency/airdrops
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      X-Cmc-Pro-Api-Key:
+      - api_key0
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '203'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 07 Mar 2025 04:35:27 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Server:
+      - Tengine
+      Cache-Control:
+      - no-cache
+      Vary:
+      - origin
+      X-Traefik-Route:
+      - coinmarketcap-pro-apis
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - origin-when-cross-origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 dcfd78c05ae02ba7df7f221cacf87f22.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MXP63-P3
+      X-Amz-Cf-Id:
+      - "-SoM-4F0uY1rI3yur48x2NVe-x5RhWtbtXq9Ug2hBoYuKiH8r7ptSA=="
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "status": {
+                "timestamp": "2025-03-07T04:35:27.451Z",
+                "error_code": 1001,
+                "error_message": "This API Key is invalid.",
+                "elapsed": 0,
+                "credit_count": 0
+            }
+        }
+  recorded_at: Fri, 07 Mar 2025 04:35:27 GMT
+recorded_with: VCR 6.3.1

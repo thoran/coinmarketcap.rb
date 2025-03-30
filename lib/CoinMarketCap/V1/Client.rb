@@ -30,8 +30,53 @@ module CoinMarketCap
         end
       end # class << self
 
+      def airdrop(id:)
+        response = get(path: '/airdrop', args: {id: id})
+        handle_response(response)
+      end
+
+      def airdrops
+        response = get(path: '/airdrops')
+        handle_response(response)
+      end
+
+      def categories
+        response = get(path: '/categories')
+        handle_response(response)
+      end
+
+      def category(id:)
+        response = get(path: '/category', args: {id: id})
+        handle_response(response)
+      end
+
+      def listings_historical
+        response = get(path: '/listings/historical')
+        handle_response(response)
+      end
+
       def listings_latest
         response = get(path: '/listings/latest')
+        handle_response(response)
+      end
+
+      def map
+        response = get(path: '/map')
+        handle_response(response)
+      end
+
+      def trending_gainers_losers
+        response = get(path: '/trending/gainers-losers')
+        handle_response(response)
+      end
+
+      def trending_latest
+        response = get(path: '/trending/latest')
+        handle_response(response)
+      end
+
+      def trending_most_visited
+        response = get(path: '/trending/most-visited')
         handle_response(response)
       end
     end

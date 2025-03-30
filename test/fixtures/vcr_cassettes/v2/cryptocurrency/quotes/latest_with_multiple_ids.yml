@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest?id=1,2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      X-Cmc-Pro-Api-Key:
+      - api_key0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 07 Mar 2025 12:10:16 GMT
+      Referrer-Policy:
+      - origin-when-cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Server:
+      - Tengine
+      Vary:
+      - Accept-Encoding
+      - origin,accept-encoding
+      Cache-Control:
+      - no-cache
+      X-Traefik-Route:
+      - coinmarketcap-pro-apis
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 2b08544e695e9e7bc49d159008bcc656.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MXP63-P3
+      X-Amz-Cf-Id:
+      - 7-oGm1SaP0YdDb1fWIdq8BkNPY1N9Ehe0BGoJAj5pHMM0IatdH9hRQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":{"timestamp":"2025-03-07T12:10:16.344Z","error_code":0,"error_message":null,"elapsed":18,"credit_count":1,"notice":null},"data":{"1":{"id":1,"name":"Bitcoin","symbol":"BTC","slug":"bitcoin","num_market_pairs":11970,"date_added":"2010-07-13T00:00:00.000Z","tags":[{"slug":"mineable","name":"Mineable","category":"OTHERS"},{"slug":"pow","name":"PoW","category":"ALGORITHM"},{"slug":"sha-256","name":"SHA-256","category":"ALGORITHM"},{"slug":"store-of-value","name":"Store
+        Of Value","category":"CATEGORY"},{"slug":"state-channel","name":"State Channel","category":"CATEGORY"},{"slug":"coinbase-ventures-portfolio","name":"Coinbase
+        Ventures Portfolio","category":"CATEGORY"},{"slug":"three-arrows-capital-portfolio","name":"Three
+        Arrows Capital Portfolio","category":"CATEGORY"},{"slug":"polychain-capital-portfolio","name":"Polychain
+        Capital Portfolio","category":"CATEGORY"},{"slug":"binance-labs-portfolio","name":"Binance
+        Labs Portfolio","category":"CATEGORY"},{"slug":"blockchain-capital-portfolio","name":"Blockchain
+        Capital Portfolio","category":"CATEGORY"},{"slug":"boostvc-portfolio","name":"BoostVC
+        Portfolio","category":"CATEGORY"},{"slug":"cms-holdings-portfolio","name":"CMS
+        Holdings Portfolio","category":"CATEGORY"},{"slug":"dcg-portfolio","name":"DCG
+        Portfolio","category":"CATEGORY"},{"slug":"dragonfly-capital-portfolio","name":"DragonFly
+        Capital Portfolio","category":"CATEGORY"},{"slug":"electric-capital-portfolio","name":"Electric
+        Capital Portfolio","category":"CATEGORY"},{"slug":"fabric-ventures-portfolio","name":"Fabric
+        Ventures Portfolio","category":"CATEGORY"},{"slug":"framework-ventures-portfolio","name":"Framework
+        Ventures Portfolio","category":"CATEGORY"},{"slug":"galaxy-digital-portfolio","name":"Galaxy
+        Digital Portfolio","category":"CATEGORY"},{"slug":"huobi-capital-portfolio","name":"Huobi
+        Capital Portfolio","category":"CATEGORY"},{"slug":"alameda-research-portfolio","name":"Alameda
+        Research Portfolio","category":"CATEGORY"},{"slug":"a16z-portfolio","name":"a16z
+        Portfolio","category":"CATEGORY"},{"slug":"1confirmation-portfolio","name":"1Confirmation
+        Portfolio","category":"CATEGORY"},{"slug":"winklevoss-capital-portfolio","name":"Winklevoss
+        Capital Portfolio","category":"CATEGORY"},{"slug":"usv-portfolio","name":"USV
+        Portfolio","category":"CATEGORY"},{"slug":"placeholder-ventures-portfolio","name":"Placeholder
+        Ventures Portfolio","category":"CATEGORY"},{"slug":"pantera-capital-portfolio","name":"Pantera
+        Capital Portfolio","category":"CATEGORY"},{"slug":"multicoin-capital-portfolio","name":"Multicoin
+        Capital Portfolio","category":"CATEGORY"},{"slug":"paradigm-portfolio","name":"Paradigm
+        Portfolio","category":"CATEGORY"},{"slug":"bitcoin-ecosystem","name":"Bitcoin
+        Ecosystem","category":"PLATFORM"},{"slug":"ftx-bankruptcy-estate","name":"FTX
+        Bankruptcy Estate ","category":"CATEGORY"},{"slug":"2017-2018-alt-season","name":"2017/18
+        Alt season","category":"CATEGORY"},{"slug":"us-strategic-crypto-reserve","name":"US
+        Strategic Crypto Reserve","category":"CATEGORY"}],"max_supply":21000000,"circulating_supply":19833453,"total_supply":19833453,"is_active":1,"infinite_supply":false,"platform":null,"cmc_rank":1,"is_fiat":0,"self_reported_circulating_supply":null,"self_reported_market_cap":null,"tvl_ratio":null,"last_updated":"2025-03-07T12:09:00.000Z","quote":{"USD":{"price":89110.22061272323,"volume_24h":58103763545.47919,"volume_change_24h":18.6535,"percent_change_1h":0.06478732,"percent_change_24h":-2.15033145,"percent_change_7d":10.95270627,"percent_change_30d":-9.28193166,"percent_change_60d":-10.29975665,"percent_change_90d":-10.62135678,"market_cap":1767363372342.0774,"market_cap_dominance":60.5107,"fully_diluted_market_cap":1871314632867.19,"tvl":null,"last_updated":"2025-03-07T12:09:00.000Z"}}},"2":{"id":2,"name":"Litecoin","symbol":"LTC","slug":"litecoin","num_market_pairs":1323,"date_added":"2013-04-28T00:00:00.000Z","tags":[{"slug":"mineable","name":"Mineable","category":"OTHERS"},{"slug":"pow","name":"PoW","category":"ALGORITHM"},{"slug":"scrypt","name":"Scrypt","category":"ALGORITHM"},{"slug":"medium-of-exchange","name":"Medium
+        of Exchange","category":"INDUSTRY"},{"slug":"heco-ecosystem","name":"HECO
+        Ecosystem","category":"PLATFORM"},{"slug":"layer-1","name":"Layer 1","category":"CATEGORY"},{"slug":"2017-2018-alt-season","name":"2017/18
+        Alt season","category":"CATEGORY"},{"slug":"hoo-smart-chain-ecosystem","name":"Hoo
+        Smart Chain Ecosystem","category":"PLATFORM"},{"slug":"made-in-america","name":"Made
+        in America","category":"CATEGORY"}],"max_supply":84000000,"circulating_supply":75558468.3040892,"total_supply":84000000,"is_active":1,"infinite_supply":false,"platform":null,"cmc_rank":19,"is_fiat":0,"self_reported_circulating_supply":null,"self_reported_market_cap":null,"tvl_ratio":null,"last_updated":"2025-03-07T12:09:00.000Z","quote":{"USD":{"price":105.17564119610572,"volume_24h":920329245.5585865,"volume_change_24h":-2.7097,"percent_change_1h":0.81178488,"percent_change_24h":-1.62404764,"percent_change_7d":-11.72825543,"percent_change_30d":-0.91982943,"percent_change_60d":-7.33385677,"percent_change_90d":-23.2198211,"market_cap":7946910351.678212,"market_cap_dominance":0.2721,"fully_diluted_market_cap":8834753860.47,"tvl":null,"last_updated":"2025-03-07T12:09:00.000Z"}}}}}'
+  recorded_at: Fri, 07 Mar 2025 12:10:16 GMT
+recorded_with: VCR 6.3.1

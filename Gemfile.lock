@@ -1,0 +1,22 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    base64 (0.2.0)
+    http.rb (0.12.1)
+    minitest (5.25.4)
+    minitest-spec-context (0.0.5)
+    vcr (6.3.1)
+      base64
+
+PLATFORMS
+  arm64-darwin-22
+  ruby
+
+DEPENDENCIES
+  http.rb
+  minitest
+  minitest-spec-context
+  vcr
+
+BUNDLED WITH
+   2.6.5

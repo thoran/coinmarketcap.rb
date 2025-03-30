@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pro-api.coinmarketcap.com/v1/cryptocurrency/trending/gainers-losers
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      X-Cmc-Pro-Api-Key:
+      - api_key0
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '203'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 07 Mar 2025 11:33:37 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Server:
+      - Tengine
+      Cache-Control:
+      - no-cache
+      Vary:
+      - origin
+      X-Traefik-Route:
+      - coinmarketcap-pro-apis
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - origin-when-cross-origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 b4a15133db3a2b8a3148547f5267d170.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MXP63-P3
+      X-Amz-Cf-Id:
+      - 7eI7gDeLC6jm5fhwonjjQfbX0aRP7aVxq3JUkI65c5u4xsq6QRsNlw==
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "status": {
+                "timestamp": "2025-03-07T11:33:37.308Z",
+                "error_code": 1001,
+                "error_message": "This API Key is invalid.",
+                "elapsed": 0,
+                "credit_count": 0
+            }
+        }
+  recorded_at: Fri, 07 Mar 2025 11:33:37 GMT
+recorded_with: VCR 6.3.1
