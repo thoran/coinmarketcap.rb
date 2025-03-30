@@ -1,0 +1,4 @@
+20250305
+0.2.0: Introduce V2 endpoints.
+1. + CoinMarketCap::V2::Client
+2. + CoinMarketCap::Client (One which isn't just a sub-class of V1 or V2.)

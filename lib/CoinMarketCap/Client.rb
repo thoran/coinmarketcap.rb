@@ -1,75 +1,29 @@
-# CoinMarketCap/Client.rb
-# CoinMarketCap::Client
-
-# 20250303, 04
-# 0.1.1
-
-gem 'http.rb'
-require 'http.rb'
-require 'json'
+require_relative './V1/Client'
+require_relative './V2/Client'
 
 module CoinMarketCap
-  module V1
-    class Client
-      API_HOST = 'pro-api.coinmarketcap.com'
+  class Client
 
-      class << self
-        def path_prefix
-          '/v1'
-        end
-      end # class << self
+    def v1_client
+      @v1_client ||= CoinMarketCap::V1::Client.new(api_key: @api_key)
+    end
 
-      def cryptocurrency_list
-        response = get(path: '/cryptocurrency/listings/latest')
-        handle_response(response)
-      end
+    def v2_client
+      @v2_client ||= CoinMarketCap::V2::Client.new(api_key: @api_key)
+    end
 
-      def cryptocurrency_by_id(id)
-        response = get(
-          path: '/cryptocurrency/info',
-          args: {id: id}
-        )
-        handle_response(response)
-      end
-
-      private
-
-      def initialize(api_key:)
-        @api_key = api_key
-      end
-
-      def request_string(path)
-        "https://#{API_HOST}#{self.class.path_prefix}#{path}"
-      end
-
-      def headers
-        {
-          'Accept' => 'application/json',
-          'X-CMC_PRO_API_KEY' => @api_key,
-        }
-      end
-
-      def do_request(verb:, path:, args: {})
-        HTTP.send(verb.to_s.downcase, request_string(path), args, headers)
-      end
-
-      def get(path:, args: {})
-        do_request(verb: 'GET', path: path, args: args)
-      end
-
-      def post(path:, args: {})
-        do_request(verb: 'POST', path: path, args: args)
-      end
-
-      def handle_response(response)
-        if response.success?
-          JSON.parse(response.body)
-        else
-          raise "Error: #{response.code} - #{response.message}"
-        end
+    def quotes(id: nil)
+      if id
+        v2_client.quotes_latest(id: id)
+      else
+        v1_client.listings_latest
       end
     end
-  end
 
-  class Client < CoinMarketCap::V1::Client; end
+    private
+
+    def initialize(api_key:)
+      @api_key = api_key
+    end
+  end
 end
