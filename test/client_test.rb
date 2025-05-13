@@ -131,13 +131,26 @@ describe CoinMarketCap::Client do
   end
 
   describe "#latest_listings" do
-    it "calls the V2 client" do
-      mocked_client = Minitest::Mock.new
-      mocked_client.expect(:market_pairs_latest, true, [])
-      client.stub :v2_client, mocked_client do
-        client.latest_listings
+    context "WITHOUT args" do
+      it "calls the V2 client" do
+        mocked_client = Minitest::Mock.new
+        mocked_client.expect(:market_pairs_latest, true, [{}])
+        client.stub :v2_client, mocked_client do
+          client.latest_listings
+        end
+        mocked_client.verify
       end
-      mocked_client.verify
+    end
+
+    context "WITH args" do
+      it "calls the V2 client" do
+        mocked_client = Minitest::Mock.new
+        mocked_client.expect(:market_pairs_latest, true, [{limit: 10}])
+        client.stub :v2_client, mocked_client do
+          client.latest_listings(limit: 10)
+        end
+        mocked_client.verify
+      end
     end
   end
 

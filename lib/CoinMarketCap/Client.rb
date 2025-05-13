@@ -47,8 +47,8 @@ module CoinMarketCap
       v1_client.map
     end
 
-    def latest_listings
-      v2_client.market_pairs_latest
+    def latest_listings(**args)
+      v2_client.market_pairs_latest(args)
     end
 
     def latest_price_data

@@ -55,8 +55,8 @@ module CoinMarketCap
         handle_response(response)
       end
 
-      def listings_latest
-        response = get(path: '/listings/latest')
+      def listings_latest(**args)
+        response = get(path: '/listings/latest', args: args)
         handle_response(response)
       end
 

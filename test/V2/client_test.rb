@@ -15,12 +15,26 @@ describe CoinMarketCap::V2::Client do
   end
 
   describe "#market_pairs_latest" do
-    it "retrieves the latest market pairs" do
-      VCR.use_cassette('v2/cryptocurrency/market-pairs/latest') do
-        assert_raises CoinMarketCap::Error do
-          response = client.market_pairs_latest
-          # _(response).must_include('data')
-          _(JSON.parse(response.body).dig('status', 'error_message')).must_equal "Your API Key subscription plan doesn't support this endpoint."
+    context "WITHOUT args" do
+      it "retrieves the latest market pairs" do
+        VCR.use_cassette('v2/cryptocurrency/market-pairs/latest') do
+          assert_raises CoinMarketCap::Error do
+            response = client.market_pairs_latest
+            # _(response).must_include('data')
+            _(JSON.parse(response.body).dig('status', 'error_message')).must_equal "Your API Key subscription plan doesn't support this endpoint."
+          end
+        end
+      end
+    end
+
+    context "#WITH args" do
+      it "retrieves the latest market pairs" do
+        VCR.use_cassette('v2/cryptocurrency/market-pairs/latest_with_args') do
+          assert_raises CoinMarketCap::Error do
+            response = client.market_pairs_latest(limit: 10)
+            # _(response).must_include('data')
+            _(JSON.parse(response.body).dig('status', 'error_message')).must_equal "Your API Key subscription plan doesn't support this endpoint."
+          end
         end
       end
     end

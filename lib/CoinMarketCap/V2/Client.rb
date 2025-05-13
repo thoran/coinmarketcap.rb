@@ -32,8 +32,8 @@ module CoinMarketCap
         handle_response(response)
       end
 
-      def market_pairs_latest
-        response = get(path: '/market-pairs/latest')
+      def market_pairs_latest(**args)
+        response = get(path: '/market-pairs/latest', args: args)
         handle_response(response)
       end
 

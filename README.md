@@ -69,7 +69,7 @@ coinmarketcap_client.info(id: 123)
 coinmarketcap_client.latest_listings
 ```
 
-### Latest OHLCV Price Data
+### Latest Price Data (OHLCV)
 ```ruby
 coinmarketcap_client.latest_price_data
 ```

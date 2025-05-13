@@ -67,12 +67,26 @@ describe CoinMarketCap::V1::Client do
   end
 
   describe "#listings_latest" do
-    it "returns an array of latest prices" do
-      VCR.use_cassette('v1/cryptocurrency/listings/latest') do
-        response = client.listings_latest
-        _(response).must_include('data')
-        _(response['data']).must_be_kind_of(Array)
-        _(response['data'][0]).must_be_kind_of(Hash)
+    context "WITHOUT args" do
+      it "returns an array of latest prices" do
+        VCR.use_cassette('v1/cryptocurrency/listings/latest') do
+          response = client.listings_latest
+          _(response).must_include('data')
+          _(response['data']).must_be_kind_of(Array)
+          _(response['data'][0]).must_be_kind_of(Hash)
+        end
+      end
+    end
+
+    context "#WITH args" do
+      it "returns an array of latest prices" do
+        VCR.use_cassette('v1/cryptocurrency/listings/latest_with_args') do
+          response = client.listings_latest(limit: 10)
+          _(response).must_include('data')
+          _(response['data']).must_be_kind_of(Array)
+          _(response['data'].count).must_equal(10)
+          _(response['data'][0]).must_be_kind_of(Hash)
+        end
       end
     end
   end

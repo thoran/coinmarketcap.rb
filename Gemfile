@@ -6,4 +6,5 @@ group :development, :test do
   gem 'minitest'
   gem 'minitest-spec-context'
   gem 'vcr'
+  gem 'webmock'
 end

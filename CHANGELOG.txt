@@ -1,3 +1,12 @@
+20250513
+0.5.0: Add arguments to latest_listings() in main, listings_latest() in V1, and market_pairs_latest() in V2.
+1. ~ CoinMarketCap::Client#latest_listings: + args
+2. ~ CoinMarketCap::V1::Client#listings_latest: + args
+3. ~ CoinMarketCap::V2::Client#market_pairs_latest: + args
+4. ~ Update tests to reflect the aforementioned addition of arguments.
+5. ~ README.md: Tiny edit.
+6. ~ Gemfile; "gem 'webmock'" was missing.
+
 202503030
 0.4.1: Finish reordering CoinMarketCap::Client methods alphabetically; + test/test_all.rb to run all tests.
 1. ~ CoinMarketCap::Client: Finish reordering of methods alphabetically.
